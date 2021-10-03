@@ -1,0 +1,21 @@
+*** Settings ***
+Library		OperatingSystem
+
+*** Test Cases ***
+Example
+	Run program
+
+Sum example
+	sum	2+1
+
+*** Keywords ***
+Run program
+	[Arguments]  	${type}=F:\\cloud_computing
+	List Directory		${type}
+	Log to console		${type}
+
+sum
+	[Arguments]	${ex}
+	${sum} =	Evaluate		${ex}
+	log to console		sum is ${sum}
+
